@@ -1,23 +1,9 @@
-import { Controller, Get, Param, Post } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
-import { OrdersService } from '../services/orders.service';
+import { Controller, Get } from '@nestjs/common';
 
-@ApiTags('orders')
 @Controller('orders')
 export class OrdersController {
-  constructor(private ordersService: OrdersService) {}
   @Get()
-  findAllOrders() {
-    return this.ordersService.findAll();
-  }
-
-  @Get(':id')
-  findOneOrders(@Param('id') id: any) {
-    return this.ordersService.findOneOrder(id);
-  }
-
-  @Post()
-  insertOrder() {
-    return this.ordersService.insertOrder();
+  orders() {
+    return 'orders';
   }
 }
