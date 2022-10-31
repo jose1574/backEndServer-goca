@@ -1,16 +1,18 @@
-import { Controller, Get, Param, ParseIntPipe } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { ProductsService } from '../services/products.service';
 
+@ApiTags('products')
 @Controller('products')
 export class ProductsController {
   constructor(private productsService: ProductsService) {}
   @Get()
-  async products() {
+  async findProducts() {
     return await this.productsService.findAll();
   }
 
   @Get(':id')
-  oneProduct(@Param('id') id: string) {
+  findOneProduct(@Param('id') id: string) {
     return this.productsService.findOne(id);
   }
 }

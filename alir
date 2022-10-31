@@ -1,0 +1,17 @@
+[33mcommit 4eb89d209e7ce11f0cf2584813345710dab07a30[m[33m ([m[1;36mHEAD[m[33m)[m
+Author: jose1574 <89107861+jose1574@users.noreply.github.com>
+Date:   Fri Oct 28 02:03:09 2022 -0400
+
+    se realiza la funcion para calcular el numero de pedido
+
+[33mcommit e2359f6beb917b53d4d85b2816d27da64687c06e[m
+Author: jose1574 <89107861+jose1574@users.noreply.github.com>
+Date:   Wed Oct 26 00:40:46 2022 -0400
+
+    completados los controladores y servicios del modulo Clients
+
+[33mcommit 52a9bbc75944ef5fdcc23a7995a720791d3ee139[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m
+Author: jose1574 <89107861+jose1574@users.noreply.github.com>
+Date:   Mon Oct 24 12:15:21 2022 -0400
+
+    estructura inicial de la aplicacion
