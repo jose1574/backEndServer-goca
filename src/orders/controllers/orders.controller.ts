@@ -18,7 +18,7 @@ export class OrdersController {
   }
 
   @Post(':id')
-  insertOrder(@Param('id') id: string) {
+  insertOrder(@Param('id') id: string) {    
     return this.ordersService.insertOrder(id);
   }
 
