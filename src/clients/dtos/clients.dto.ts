@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { IsString, IsNotEmpty, IsNumber, IsEmail, IsOptional } from 'class-validator';
-import { ApiProperty } from '@nestjs/swagger';
+import { ApiProperty, PartialType } from '@nestjs/swagger';
 
 export class CreateClientDto {
   @IsString()
@@ -28,7 +28,7 @@ export class CreateClientDto {
   @ApiProperty()
   readonly email: string;
 
-  @IsNumber()
+  @IsString()
   @IsNotEmpty()
   @ApiProperty()
   readonly phone: string;
@@ -40,3 +40,5 @@ export class CreateClientDto {
 
 
 }
+
+export class UpdateClientDto extends PartialType(CreateClientDto) {}

@@ -1,6 +1,6 @@
 import { Injectable, Inject, NotFoundException } from '@nestjs/common';
 import { Client } from 'pg';
-import { CreateClientDto } from '../dtos/clients.dto';
+import { CreateClientDto, UpdateClientDto} from '../dtos/clients.dto';
 
 @Injectable()
 export class ClientsService {
@@ -28,14 +28,14 @@ export class ClientsService {
       });
   }
 
-  insertClient(payload: CreateClientDto) {
+  insertClient(createClientDto: CreateClientDto) {
     return this.client
       .query(
         `
-    INSERT INTO clients VALUES ('${payload.code}', '${payload.desciption}', '${payload.address}', 
-      '${payload.code}', '${payload.email}', '${payload.phone}', '', 
+    INSERT INTO clients VALUES ('${createClientDto.code}', '${createClientDto.desciption}', '${createClientDto.address}', 
+      '${createClientDto.code}', '${createClientDto.email}', '${createClientDto.phone}', '', 
       '00', '00', '00', '00', '00', '00', '00', 
-      '00', '0', '0', '${payload.client_type}', '0',
+      '00', '0', '0', '${createClientDto.client_type}', '0',
       '01', '1', 'FALSE', '00', '00', 
       '0', '0', 'C', 'FALSE', 
       'FALSE', 'FALSE', 'FALSE');`,

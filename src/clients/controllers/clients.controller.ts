@@ -18,7 +18,7 @@ export class ClientsController {
   }
 
   @Post()
-  addClient(@Body() payload: CreateClientDto) {
-    return this.clientService.insertClient(payload);
+  addClient(@Body() createClientDto: CreateClientDto) {
+    return this.clientService.insertClient(createClientDto);
   }
 }
